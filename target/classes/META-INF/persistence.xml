@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="sepa">
-		
+
 		<class>model.SEPA</class>
 		<class>model.Document</class>
 		<class>model.CmpsdTx</class>
@@ -13,15 +13,15 @@
 		<class>model.Amount</class>
 		<properties>
 			<!-- Login et password -->
-			<property name="javax.persistence.jdbc.password" value="" />
-			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="fa9ad0b01037a79adef88875e6dedb2f5fb5bad5e3c08085701a38e654a33985" />
+			<property name="javax.persistence.jdbc.user" value="psxbkisnafdktx" />
 
 			<!-- MySQL -->
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 
 			<!-- Adresse -->
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/rest-ws" />
+				value="jdbc:postgresq://ec2-176-34-113-15.eu-west-1.compute.amazonaws.com:5432/d7a379beu7sm39" />
 			<property name="eclipselink.jdbc.native-sql" value="false" />
 
 			<!-- Creation Base de données ! create-or-extend-tables OR drop-and-create-tables 
