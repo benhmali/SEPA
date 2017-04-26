@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:Document xmlns:p="http://univ.fr/sepa" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://univ.fr/sepa sepa.xsd ">
+  <DrctDbtTxInf>
+    <PmtId>PmtId</PmtId>
+    <InstdAmt Ccy="">
+      <InstdAmt>0.0</InstdAmt>
+    </InstdAmt>
+    <DrctDbtTx>
+      <MndtId>MndtId</MndtId>
+      <DtOfSgntr>2001-01-01</DtOfSgntr>
+    </DrctDbtTx>
+    <DbtrAgt>
+      <BIC>AZAZBBAZAEA</BIC>
+    </DbtrAgt>
+    <Dbtr>
+      <NM>NM</NM>
+    </Dbtr>
+    <DbtrAcct>
+      <IBAN>AZ21AZEZRCVS52265</IBAN>
+    </DbtrAcct>
+  </DrctDbtTxInf>
+</p:Document>
