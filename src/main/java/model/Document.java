@@ -34,13 +34,11 @@ public class Document implements Serializable {
 	@XmlElement(name = "DrctDbtTxInf", required = true)
 	@OneToMany(cascade = { CascadeType.PERSIST })
 	protected List<DrctDbtTxInf> drctDbtTxInf;
-
-	public Document( List<DrctDbtTxInf> drctDbtTxInf) {
+	
+	public Document(List<DrctDbtTxInf> drctDbtTxInf) {
 		super();
 		this.drctDbtTxInf = drctDbtTxInf;
 	}
-
-	
 	
 
 	public void setDrctDbtTxInf(List<DrctDbtTxInf> drctDbtTxInf) {
