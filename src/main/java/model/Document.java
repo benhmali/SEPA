@@ -35,6 +35,10 @@ public class Document implements Serializable {
 	@OneToMany(cascade = { CascadeType.PERSIST })
 	protected List<DrctDbtTxInf> drctDbtTxInf;
 	
+	public Document(){
+		
+	}
+	
 	public Document(List<DrctDbtTxInf> drctDbtTxInf) {
 		super();
 		this.drctDbtTxInf = drctDbtTxInf;
