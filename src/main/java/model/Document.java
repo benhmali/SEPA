@@ -35,19 +35,13 @@ public class Document implements Serializable {
 	@OneToMany(cascade = { CascadeType.PERSIST })
 	protected List<DrctDbtTxInf> drctDbtTxInf;
 
-	public Document(long id, List<DrctDbtTxInf> drctDbtTxInf) {
+	public Document( List<DrctDbtTxInf> drctDbtTxInf) {
 		super();
-		this.id = id;
 		this.drctDbtTxInf = drctDbtTxInf;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
+	
+	
 
 	public void setDrctDbtTxInf(List<DrctDbtTxInf> drctDbtTxInf) {
 		this.drctDbtTxInf = drctDbtTxInf;
@@ -62,7 +56,7 @@ public class Document implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Document [id=" + id + ", drctDbtTxInf=" + drctDbtTxInf + "]";
+		return "Document [ drctDbtTxInf=" + drctDbtTxInf + "]";
 	}
 
 }

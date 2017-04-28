@@ -10,13 +10,13 @@
       <DtOfSgntr>2001-01-01</DtOfSgntr>
     </DrctDbtTx>
     <DbtrAgt>
-      <BIC>AZAZBBAZAEA</BIC>
+      <BIC>BIC</BIC>
     </DbtrAgt>
     <Dbtr>
       <NM>NM</NM>
     </Dbtr>
     <DbtrAcct>
-      <IBAN>AZ21AZEZRCVS52265</IBAN>
+      <IBAN>IBAN</IBAN>
     </DbtrAcct>
   </DrctDbtTxInf>
 </Document>

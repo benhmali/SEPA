@@ -1,15 +1,17 @@
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\CmpsdIdt.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\SEPA.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\service\EntityManagerConnectionService.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\configuration\ISepaDao.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\service\SepaServiceImpl.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\controller\SepaController.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\CmpsdNmd.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\Document.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\configuration\SepaDaoImpl.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\Amount.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\service\ValidatorErrorHandler.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\service\ISepaService.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\CmpsdTx.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\model\CmpsdAgt.java
-C:\Users\Aloulou\Desktop\SEPA\src\main\java\service\ValidateSepaByXsd.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\configuration\ISepaDao.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\Amount.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\service\EntityManagerConnectionService.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\DrctDbtTxInf.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\PrvtId.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\Document.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\service\ISepaService.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\service\ValidateSepaByXsd.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\service\SepaServiceImpl.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\CmpsdNmd.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\CmpsdIdt.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\CmpsdAgt.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\service\ValidatorErrorHandler.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\controller\SepaController.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\Othr.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\configuration\SepaDaoImpl.java
+C:\Users\Aloulou\Desktop\Depot Git\SEPA\src\main\java\model\CmpsdTx.java
