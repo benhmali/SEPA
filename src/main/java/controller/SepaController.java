@@ -58,7 +58,7 @@ public class SepaController {
 		System.out.println("ahla bkhouya");
 		try {
 			if (!ValidateSepaByXsd.isValid(sepa))
-				return new ResponseEntity<Document>(HttpStatus.CHECKPOINT);
+				return new ResponseEntity<Document>(HttpStatus.ALREADY_REPORTED);
 
 			System.out.println(sepa.toString());
 
