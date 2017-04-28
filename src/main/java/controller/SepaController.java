@@ -57,8 +57,8 @@ public class SepaController {
 	public ResponseEntity<Document> depotSepa(@RequestBody Document sepa) {
 		System.out.println("ahla bkhouya");
 		try {
-			if (!ValidateSepaByXsd.isValid(sepa))
-				return new ResponseEntity<Document>(HttpStatus.BAD_REQUEST);
+			//if (!ValidateSepaByXsd.isValid(sepa))
+				//return new ResponseEntity<Document>(HttpStatus.BAD_REQUEST);
 
 			System.out.println(sepa.toString());
 
