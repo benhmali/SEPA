@@ -1,23 +1,38 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlAccessorType(XmlAccessType.FIELD)
+@Entity
 @XmlRootElement
 @XmlType(name = "CmpsdAgt", propOrder = { "bic", "othr" })
-public class CmpsdAgt {
+@XmlAccessorType(XmlAccessType.FIELD)
+public class CmpsdAgt implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@XmlTransient
+	private long id;
 
 	@XmlElement(name = "BIC")
 	protected String bic;
 	@XmlElement(name = "Othr")
 	@OneToOne(cascade = { CascadeType.PERSIST })
-	protected CmpsdAgt.Othr othr;
+	protected Othr othr;
 
 	/**
 	 * Obtient la valeur de la propriété bic.
@@ -46,7 +61,7 @@ public class CmpsdAgt {
 	 * @return possible object is {@link CmpsdAgt.Othr }
 	 * 
 	 */
-	public CmpsdAgt.Othr getOthr() {
+	public Othr getOthr() {
 		return othr;
 	}
 
@@ -57,40 +72,9 @@ public class CmpsdAgt {
 	 *            allowed object is {@link CmpsdAgt.Othr }
 	 * 
 	 */
-	public void setOthr(CmpsdAgt.Othr value) {
+	public void setOthr(Othr value) {
 		this.othr = value;
 	}
 
 	
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlRootElement
-	@XmlType(name = "", propOrder = { "id" })
-	public static class Othr {
-
-		@XmlElement(name = "Id", required = true)
-		protected String id;
-
-		/**
-		 * Obtient la valeur de la propriété id.
-		 * 
-		 * @return possible object is {@link String }
-		 * 
-		 */
-		public String getId() {
-			return id;
-		}
-
-		/**
-		 * Définit la valeur de la propriété id.
-		 * 
-		 * @param value
-		 *            allowed object is {@link String }
-		 * 
-		 */
-		public void setId(String value) {
-			this.id = value;
-		}
-
-	}
-
 }

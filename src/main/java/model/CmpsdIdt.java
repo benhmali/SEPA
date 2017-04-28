@@ -7,24 +7,39 @@
 
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+@Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
 @XmlType(name = "CmpsdIdt", propOrder = { "iban", "prvtId" })
-public class CmpsdIdt {
+public class CmpsdIdt implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@XmlTransient
+	private long id;
 
 	@XmlElement(name = "IBAN")
 	protected String iban;
 	@XmlElement(name = "PrvtId")
 	@OneToOne(cascade = { CascadeType.PERSIST })
-	protected CmpsdIdt.PrvtId prvtId;
+	protected PrvtId prvtId;
 
 	/**
 	 * Obtient la valeur de la propriété iban.
@@ -53,7 +68,7 @@ public class CmpsdIdt {
 	 * @return possible object is {@link CmpsdIdt.PrvtId }
 	 * 
 	 */
-	public CmpsdIdt.PrvtId getPrvtId() {
+	public PrvtId getPrvtId() {
 		return prvtId;
 	}
 
@@ -64,128 +79,9 @@ public class CmpsdIdt {
 	 *            allowed object is {@link CmpsdIdt.PrvtId }
 	 * 
 	 */
-	public void setPrvtId(CmpsdIdt.PrvtId value) {
+	public void setPrvtId(PrvtId value) {
 		this.prvtId = value;
 	}
 
-	@XmlAccessorType(XmlAccessType.FIELD)
-	@XmlRootElement
-	@XmlType(name = "", propOrder = { "othr" })
-	public static class PrvtId {
-
-		@XmlElement(required = true)
-		@OneToOne(cascade = { CascadeType.PERSIST })
-		protected CmpsdIdt.PrvtId.Othr othr;
-
-		/**
-		 * Obtient la valeur de la propriété othr.
-		 * 
-		 * @return possible object is {@link CmpsdIdt.PrvtId.Othr }
-		 * 
-		 */
-		public CmpsdIdt.PrvtId.Othr getOthr() {
-			return othr;
-		}
-
-		/**
-		 * Définit la valeur de la propriété othr.
-		 * 
-		 * @param value
-		 *            allowed object is {@link CmpsdIdt.PrvtId.Othr }
-		 * 
-		 */
-		public void setOthr(CmpsdIdt.PrvtId.Othr value) {
-			this.othr = value;
-		}
-
-		
-		@XmlAccessorType(XmlAccessType.FIELD)
-		@XmlRootElement
-		@XmlType(name = "", propOrder = { "id", "schmeNm" })
-		public static class Othr {
-
-			@XmlElement(name = "Id", required = true)
-			protected String id;
-			@XmlElement(name = "SchmeNm", required = true)
-			@OneToOne(cascade = { CascadeType.PERSIST })
-			protected CmpsdIdt.PrvtId.Othr.SchmeNm schmeNm;
-
-			/**
-			 * Obtient la valeur de la propriété id.
-			 * 
-			 * @return possible object is {@link String }
-			 * 
-			 */
-			public String getId() {
-				return id;
-			}
-
-			/**
-			 * Définit la valeur de la propriété id.
-			 * 
-			 * @param value
-			 *            allowed object is {@link String }
-			 * 
-			 */
-			public void setId(String value) {
-				this.id = value;
-			}
-
-			/**
-			 * Obtient la valeur de la propriété schmeNm.
-			 * 
-			 * @return possible object is {@link CmpsdIdt.PrvtId.Othr.SchmeNm }
-			 * 
-			 */
-			public CmpsdIdt.PrvtId.Othr.SchmeNm getSchmeNm() {
-				return schmeNm;
-			}
-
-			/**
-			 * Définit la valeur de la propriété schmeNm.
-			 * 
-			 * @param value
-			 *            allowed object is
-			 *            {@link CmpsdIdt.PrvtId.Othr.SchmeNm }
-			 * 
-			 */
-			public void setSchmeNm(CmpsdIdt.PrvtId.Othr.SchmeNm value) {
-				this.schmeNm = value;
-			}
-
-			@XmlAccessorType(XmlAccessType.FIELD)
-			@XmlRootElement
-			@XmlType(name = "", propOrder = { "prtry" })
-			public static class SchmeNm {
-
-				@XmlElement(name = "Prtry", required = true)
-				protected Object prtry;
-
-				/**
-				 * Obtient la valeur de la propriété prtry.
-				 * 
-				 * @return possible object is {@link Object }
-				 * 
-				 */
-				public Object getPrtry() {
-					return prtry;
-				}
-
-				/**
-				 * Définit la valeur de la propriété prtry.
-				 * 
-				 * @param value
-				 *            allowed object is {@link Object }
-				 * 
-				 */
-				public void setPrtry(Object value) {
-					this.prtry = value;
-				}
-
-			}
-
-		}
-
-	}
-
+	
 }
