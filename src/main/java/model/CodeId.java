@@ -15,39 +15,41 @@ import javax.xml.bind.annotation.XmlType;
 
 @Entity
 @XmlRootElement
-@XmlType(name = "CmpsdNmd", propOrder = { "nm" })
+@XmlType(propOrder = { "IBAN"})
 @XmlAccessorType(XmlAccessType.FIELD)
-public class CmpsdNmd implements Serializable {
+public class CodeId implements Serializable{
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@XmlTransient
 	private long id;
-
-	@XmlElement(name = "NM", required = true)
-	protected String nm;
-
-	/**
-	 * Obtient la valeur de la propriété nm.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getNM() {
-		return nm;
+	@XmlElement(name="IBAN")
+	private String IBAN;
+	
+	public CodeId() {
 	}
 
-	/**
-	 * Définit la valeur de la propriété nm.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setNM(String value) {
-		this.nm = value;
+	public String getIBAN() {
+		return IBAN;
 	}
 
+	public void setIBAN(String iBAN) {
+		IBAN = iBAN;
+	}
+
+	public CodeId(String iBAN) {
+		IBAN = iBAN;
+	}
+
+	@Override
+	public String toString() {
+		return "CodeId [id=" + id + ", CodeId=" + IBAN + "]";
+	}
+	
+	
 }

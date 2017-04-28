@@ -4,12 +4,16 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="sepa">
 
+		<class>model.CodeId</class>
+		<class>model.Debtor</class>
+		<class>model.DebtorAccount</class>
+		<class>model.DeptorAgent</class>
+		<class>model.DirectDebitTransaction</class>
+		<class>model.DirectDebitTransactionInformation</class>
 		<class>model.Document</class>
-		<class>model.CmpsdTx</class>
-		<class>model.CmpsdNmd</class>
-		<class>model.CmpsdIdt</class>
-		<class>model.CmpsdAgt</class>
-		<class>model.Amount</class>
+		<class>model.FinalInstitutionIdentifier</class>
+		<class>model.InstructedAmount</class>
+		<class>model.MandateRelatedInformation</class>
 		<properties>
 			<!-- Login et password -->
 			<property name="javax.persistence.jdbc.password" value="fa9ad0b01037a79adef88875e6dedb2f5fb5bad5e3c08085701a38e654a33985" />

@@ -1,15 +1,17 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.text.NumberFormat;
+import java.util.Formatter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -19,42 +21,42 @@ import javax.xml.bind.annotation.XmlType;
 
 @Entity
 @XmlRootElement(name = "Document")
-@XmlType(propOrder = { "drctDbtTxInf" })
+@XmlType(propOrder = { "directDebitTransactionInformation"})
 @XmlAccessorType(XmlAccessType.FIELD)
-
 public class Document implements Serializable {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@XmlTransient
 	private long id;
+	@XmlElement(name = "DrctDbtTxInf")
+	@OneToOne(cascade = CascadeType.PERSIST)
+	private DirectDebitTransactionInformation directDebitTransactionInformation;
 
-	@XmlElement(name = "DrctDbtTxInf", required = true)
-	@OneToMany(cascade = { CascadeType.PERSIST })
-	protected List<DrctDbtTxInf> drctDbtTxInf;
-	
-	public Document(List<DrctDbtTxInf> drctDbtTxInf) {
-		super();
-		this.drctDbtTxInf = drctDbtTxInf;
-	}
-	
-
-	public void setDrctDbtTxInf(List<DrctDbtTxInf> drctDbtTxInf) {
-		this.drctDbtTxInf = drctDbtTxInf;
+	public Document() {
 	}
 
-	public List<DrctDbtTxInf> getDrctDbtTxInf() {
-		if (drctDbtTxInf == null) {
-			drctDbtTxInf = new ArrayList<DrctDbtTxInf>();
-		}
-		return this.drctDbtTxInf;
+	public Document(DirectDebitTransactionInformation directDebitTransactionInformation) {
+
+		this.directDebitTransactionInformation = directDebitTransactionInformation;
+	}
+
+	public DirectDebitTransactionInformation getDirectDebitTransactionInformation() {
+		return directDebitTransactionInformation;
+	}
+
+	public void setDirectDebitTransactionInformation(
+			DirectDebitTransactionInformation directDebitTransactionInformation) {
+		this.directDebitTransactionInformation = directDebitTransactionInformation;
 	}
 
 	@Override
 	public String toString() {
-		return "Document [ drctDbtTxInf=" + drctDbtTxInf + "]";
+		return "Document [id=" + id + ", directDebitTransactionInformation=" + directDebitTransactionInformation + "]";
 	}
 
 }

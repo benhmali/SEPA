@@ -14,40 +14,40 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 @Entity
-@XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
-@XmlType(name = "", propOrder = { "id" })
-public class Othr implements Serializable {
+@XmlType(propOrder = { "name" })
 
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Debtor implements Serializable {
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@XmlTransient
-	private long id_o;
+	private long id;
+	@XmlElement(name = "Nm")
+	private String name;
 
-	@XmlElement(name = "Id", required = true)
-	protected String id;
-
-	/**
-	 * Obtient la valeur de la propriété id.
-	 * 
-	 * @return possible object is {@link String }
-	 * 
-	 */
-	public String getId() {
-		return id;
+	public Debtor() {
 	}
 
-	/**
-	 * Définit la valeur de la propriété id.
-	 * 
-	 * @param value
-	 *            allowed object is {@link String }
-	 * 
-	 */
-	public void setId(String value) {
-		this.id = value;
+	public Debtor(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Debtor [id=" + id + ", name=" + name + "]";
 	}
 
 }
