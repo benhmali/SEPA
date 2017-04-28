@@ -1,5 +1,7 @@
 package controller;
 
+import javax.print.DocFlavor.STRING;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,21 +56,21 @@ public class SepaController {
 	}
 
 	@RequestMapping(value = "/depot", method = RequestMethod.POST)
-	public ResponseEntity<Document> depotSepa(@RequestBody Document sepa) {
+	public ResponseEntity<String> depotSepa(@RequestBody Document sepa) {
 		System.out.println("ahla bkhouya");
 		try {
 			if (!ValidateSepaByXsd.isValid(sepa))
-				return new ResponseEntity<Document>(HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<String>("chhal malla",HttpStatus.BAD_REQUEST);
 
 			System.out.println(sepa.toString());
 
 			sepa = service.addSepa(sepa);
-			return new ResponseEntity<Document>(sepa, HttpStatus.CREATED);
+			return new ResponseEntity<String>("",HttpStatus.OK);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			System.err.println(e.getStackTrace());
 
-			return new ResponseEntity<Document>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
